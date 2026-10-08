@@ -614,6 +614,19 @@ RUN --mount=type=cache,dst=/var/cache \
     ; fi && \
     systemctl enable sddm.service && \
     /ctx/cleanup
+    
+# Install Steam Deck mods for TDP. It's tainting the kernel, but I think there's a good reason to do it.
+RUN --mount=type=cache,dst=/var/cache \
+    --mount=type=cache,dst=/var/log \
+    --mount=type=bind,from=akmods,src=/kernel-rpms,dst=/tmp/kernel-rpms \
+    --mount=type=bind,from=akmods,src=/rpms/common,dst=/tmp/rpms/common \
+    --mount=type=bind,from=akmods,src=/rpms/kmods,dst=/tmp/rpms/kmods \
+    --mount=type=bind,from=akmods-extra,src=/rpms/extra,dst=/tmp/rpms/extra \
+    --mount=type=bind,from=akmods-extra,src=/rpms/kmods,dst=/tmp/rpms/kmods-extra \
+    --mount=type=bind,from=ctx,source=/,target=/ctx \
+    --mount=type=tmpfs,dst=/tmp \
+    /ctx/install-kernel-akmods-sb && \
+    /ctx/cleanup
 
 # Install new packages
 RUN --mount=type=cache,dst=/var/cache \
