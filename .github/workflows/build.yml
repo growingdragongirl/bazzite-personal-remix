@@ -1,34 +1,34 @@
 name: Build Bazzite
 on:
-  schedule:
-    - cron: "40 4 * * 1" # 4:40 utc monday
-  pull_request:
-    branches:
-      - testing
-      - unstable
-    paths-ignore:
-      - "**.md"
-      - "**.txt"
-      - "installer/**"
-      - "repo_content/**"
-      - "spec_files/**"
-      - "post_install_files/**"
-      - "press_kit/**"
-      - "docs/**"
-      - ".github/workflows/build_iso*.yml"
-  push:
-    branches:
-      - testing
-      - unstable
-    paths-ignore:
-      - "**.md"
-      - "**.txt"
-      - "repo_content/**"
-      - "spec_files/**"
-      - "post_install_files/**"
-      - "press_kit/**"
-      - ".github/workflows/build_iso*.yml"
-  merge_group:
+#  schedule:
+#    - cron: "40 4 * * 1" # 4:40 utc monday
+#  pull_request:
+#    branches:
+#      - testing
+#      - unstable
+#    paths-ignore:
+#      - "**.md"
+#      - "**.txt"
+#      - "installer/**"
+#      - "repo_content/**"
+#      - "spec_files/**"
+#      - "post_install_files/**"
+#      - "press_kit/**"
+#      - "docs/**"
+#      - ".github/workflows/build_iso*.yml"
+#  push:
+#    branches:
+#      - testing
+#      - unstable
+#    paths-ignore:
+#      - "**.md"
+#      - "**.txt"
+#      - "repo_content/**"
+#      - "spec_files/**"
+#      - "post_install_files/**"
+#      - "press_kit/**"
+#      - ".github/workflows/build_iso*.yml"
+#  merge_group:
   workflow_dispatch:
     inputs:
       handwritten:
