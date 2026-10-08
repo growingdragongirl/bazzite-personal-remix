@@ -2,7 +2,7 @@
 
 set -eoux pipefail
 
-echo "::group::Executing install-kernel-akmods"
+echo "::group::Executing install-kernel-akmods-sb"
 trap 'echo "::endgroup::"' EXIT
 
 # create a shims to bypass kernel install triggering dracut/rpm-ostree
@@ -22,12 +22,6 @@ done
 
 # cleanup leftovers that are not covered by kernel-* packages for some reason
 rm -rf /usr/lib/modules
-
-dnf5 -y install \
-    /tmp/kernel-rpms/kernel-[0-9]*.rpm \
-    /tmp/kernel-rpms/kernel-core-*.rpm \
-    /tmp/kernel-rpms/kernel-modules-*.rpm \
-    /tmp/kernel-rpms/kernel-devel-*.rpm
 
 dnf5 versionlock add kernel kernel-devel kernel-devel-matched kernel-core kernel-modules
 
