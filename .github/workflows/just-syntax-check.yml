@@ -9,8 +9,13 @@ jobs:
     name: Check Just Syntax
     runs-on: ubuntu-slim
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Check just syntax
-        uses: ublue-os/just-action@v3
+        uses: ublue-os/just-action@30ab4659369934b65b655bf8d2fa4ddd6547d384 # v3
