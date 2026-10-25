@@ -42,6 +42,11 @@ jobs:
           - bazzite-deck-nvidia
           - bazzite-deck-nvidia-gnome
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: audit
+
       - name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@ceedf095f4ec1a097402bc6bd80831f2e1a6fde6 # v2.0.0
         with:
@@ -138,7 +143,7 @@ jobs:
           sudo du -sh /mnt/podman-storage.img
 
       - name: Build ISOs
-        uses: Zeglius/titanoboa@revamp-pr
+        uses: Zeglius/titanoboa@7737f4748458252ac827dca14b3d6dd09298472a # revamp-pr
         id: build
         with:
           image-ref: localhost/payload:latest
