@@ -10,6 +10,9 @@ concurrency:
   group: issue-filter-${{ github.event.issue.number }}
   cancel-in-progress: false
 
+permissions:  # added using https://github.com/step-security/secure-repo
+  contents: read
+
 jobs:
   filter-issues:
     if: >-
@@ -21,6 +24,11 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          egress-policy: audit
+
       - name: Close issues mentioning PS5
         uses: peter-evans/close-issue@05dff7ca07116e5707cfb3a3cd4af7bb5e43524c # v3
         with:
@@ -45,6 +53,11 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          egress-policy: audit
+
       - name: Reopen after a reply from the issue author
         env:
           GH_TOKEN: ${{ github.token }}
