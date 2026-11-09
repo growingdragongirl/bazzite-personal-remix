@@ -23,7 +23,8 @@ cp --archive --verbose --force \
 /ctx/bazzite/09-install-ujust-picker.sh
 /ctx/bazzite/10-configure-desktops.sh
 /ctx/bazzite/11-ublue-os-media-automount-udev.sh
-/ctx/bazzite/12-finalize.sh
+/ctx/bazzite/12-custom-packages.sh
+/ctx/bazzite/13-finalize.sh
 
 cp --archive --verbose --force \
     /tmp/system_files/overrides/* \

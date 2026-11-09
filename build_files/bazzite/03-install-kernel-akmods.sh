@@ -65,32 +65,32 @@ dnf5 versionlock add \
 # -- Install common akmods --
 # Install common kernel module RPMs (KVMFR, OpenRazer, v4l2loopback, etc.).
 echo "==> Installing common akmods..."
-/ctx/tools/install-kmods \
-    /tmp/rpms/{common,kmods}/*kvmfr*.rpm \
-    /tmp/rpms/{common,kmods}/*openrazer*.rpm \
-    /tmp/rpms/{common,kmods}/*v4l2loopback*.rpm \
-    /tmp/rpms/{common,kmods}/*xone*.rpm \
-    /tmp/rpms/{common,kmods}/*wl*.rpm
+#/ctx/tools/install-kmods \
+#    /tmp/rpms/{common,kmods}/*kvmfr*.rpm \
+#    /tmp/rpms/{common,kmods}/*openrazer*.rpm \
+#    /tmp/rpms/{common,kmods}/*v4l2loopback*.rpm \
+#    /tmp/rpms/{common,kmods}/*xone*.rpm \
+#    /tmp/rpms/{common,kmods}/*wl*.rpm
 
 # -- Install extra akmods --
 # Install extra kernel module RPMs (zenergy, gcadapter, evdi, etc.).
 echo "==> Installing extra akmods..."
-/ctx/tools/install-kmods \
-    /tmp/rpms/{extra,kmods-extra}/*zenergy*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*gcadapter*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*evdi*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*kvmfr*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*new-lg4ff*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*hid-tmff2*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*t150-driver*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*hid-fanatecff*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*ryzen_smu*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*sc0710*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*nct6687d*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*system76*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*vhba*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*trueforce*.rpm \
-    /tmp/rpms/{extra,kmods-extra}/*ayaneo*.rpm
+#/ctx/tools/install-kmods \
+#    /tmp/rpms/{extra,kmods-extra}/*zenergy*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*gcadapter*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*evdi*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*kvmfr*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*new-lg4ff*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*hid-tmff2*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*t150-driver*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*hid-fanatecff*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*ryzen_smu*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*sc0710*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*nct6687d*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*system76*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*vhba*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*trueforce*.rpm \
+#    /tmp/rpms/{extra,kmods-extra}/*ayaneo*.rpm
 
 # -- Restore original kernel install.d scripts --
 # Move the backed-up install scripts back to their original names.
