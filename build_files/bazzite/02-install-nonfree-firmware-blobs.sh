@@ -33,7 +33,7 @@ chmod +x download-driver.sh
 wget https://raw.githubusercontent.com/jetm/mediatek-mt7927-dkms/ad1f3e4d19fe540aaa1f449ddba86c65db9bfc82/extract_firmware.py
 chmod +x extract_firmware.py
 ./extract_firmware.py DRV_WiFi_MTK_MT7925_MT7927_TP_W11_64_V5603998_20250709R.zip .
-mkdir /tmp/firmware/mediatek/mt7927
+mkdir -p /tmp/firmware/mediatek/mt7927
 cp BT_RAM_CODE_MT6639_2_1_hdr.bin /tmp/firmware/mediatek/mt7927/.
 
 # -- Install firmware into root filesystem --
